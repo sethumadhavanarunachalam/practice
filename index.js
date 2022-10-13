@@ -1,7 +1,7 @@
 function createtabledata(tagname,attrname,attrvalue,content){
     var ele = document.createElement(tagname);
     ele.setAttribute(attrname,attrvalue);
-    ele.innerHTMl=content;
+    ele.innerHTML=content;
     return ele;
 }
 function createtable(tagname,attrname,attrvalue){
@@ -11,7 +11,8 @@ function createtable(tagname,attrname,attrvalue){
 }
 function createtd(tagname,content){
     var ele = document.createElement(tagname);
-    ele.innerHTMl=content;
+    ele.innerHTML=content;
+    return ele;
 
 }
 function createtablerow(tagname){
