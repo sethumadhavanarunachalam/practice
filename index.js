@@ -1,39 +1,43 @@
-//Assignemt 01: Create a HTML Form Using DOM
-//1.firstname,2.Middlename,3.lastname,4.Phone number
-//Deploy it in Netlify
-function createlabel(tagname,attriname,attrivalue,content){
-var label = document.createElement(tagname);
-label.setAttribute(attriname,attrivalue);
-label.innerHTML=content;
-return label;
+function createtabledata(tagname,attrname,attrvalue,content){
+    var ele = document.createElement(tagname);
+    ele.setAttribute(attrname,attrvalue);
+    ele.innerHTMl=content;
+    return ele;
 }
-function createinput(tagname,attriname,attrivalue,content){
-var label = document.createElement(tagname);
-label.setAttribute(attriname,attrivalue);
-label.innerHTML=content;
-return label;
+function createtable(tagname,attrname,attrvalue){
+    var ele = document.createElement(tagname);
+    ele.setAttribute(attrname,attrvalue);
+    return ele;
+}
+function createtd(tagname,content){
+    var ele = document.createElement(tagname);
+    ele.innerHTMl=content;
+
+}
+function createtablerow(tagname){
+    var ele = document.createElement(tagname);
+    return ele;
 }
 
-function linebr(tagname){
-var label = document.createElement(tagname);
-return label;
-}
-
-let label1 = createlabel("label","for","firstname","Firstname");
-let br1 = linebr("br");
-let input1 = createinput("input","id","firstname");
-let br2 = linebr("br");
-let label2 = createlabel("label","for","middlename","Middlename");
-let br3 = linebr("br");
-let input2 = createinput("input","id","middlename");
-let br4 = linebr("br");
-let label3 = createlabel("label","for","lastname","Lastname");
-let br5 = linebr("br");
-let input3 = createinput("input","id","lastname");
-let br6 = linebr("br");
-let label4 = createlabel("label","for","phonenumber","Phonenumber");
-let br7 = linebr("br");
-let input4 = createinput("input","id","phonenumber");
-
-
-document.body.append(label1,br1,input1,br2,label2,br3,input2,br4,label3,br5,input3,br6,label4,br7,input4);
+var table = createtable("table","class","table");
+var tablehead = createtable("thead","class","thead-dark");
+var tablerow1= createtablerow("tr");
+var tableh1 = createtabledata("th","scope","col","First");
+var tableh12 = createtabledata("th","scope","col","First");
+var tableh13 = createtabledata("th","scope","col","First");
+var tablerow2= createtablerow("tr");
+var tablebody = createtablerow("tbody");
+var tableh2 = createtd("td","scope","mark");
+var tableh21 = createtd("td","scope","otto");
+var tableh22 = createtd("td","scope","@mdo");
+table.append(tablehead);
+tablehead.append(tablerow1);
+tablerow1.append(tableh1);
+tablerow1.append(tableh12);
+tablerow1.append(tableh13);
+table.append(tablebody);
+tablebody.append(tablerow2);
+tablerow2.append(tableh2);
+tablerow2.append(tableh21);
+tablerow2.append(tableh22);
+document.body.append(table);
